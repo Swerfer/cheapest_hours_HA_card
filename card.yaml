@@ -6,14 +6,10 @@ cards:
         name: Tijdblok goedkoopste uren
   - type: markdown
     content: >-
-      {% set dagen = ["Maandag",
-      "Dinsdag","Woensdag","Donderdag","Vrijdag","Zaterdag","Zondag"] %} {% from
-      "cheapest_energy_hours.jinja" import cheapest_energy_hours %} {% set tijd
-      = cheapest_energy_hours("sensor.nordpool",
-      hours=states('input_number.slider_cheapest_hours_block'), look_ahead=true,
-      include_tomorrow=true) | as_datetime %} <font
-      color="greenyellow"><b><center>Goedkoopste
-      {{states('input_number.slider_cheapest_hours_block') | int}} uur: {{
-      dagen[tijd.weekday()] }} {{ cheapest_energy_hours("sensor.nordpool",
-      hours=states('input_number.slider_cheapest_hours_block'), look_ahead=true,
-      include_tomorrow=true, time_format="%H:%M:%S") }}</center></b></font>
+      {% set days = ["Maandag", "Dinsdag","Woensdag","Donderdag","Vrijdag","Zaterdag","Zondag"] %} 
+      {% from "cheapest_energy_hours.jinja" import cheapest_energy_hours %}
+      {% set time = cheapest_energy_hours("sensor.nordpool", hours=states('input_number.slider_cheapest_hours_block'), look_ahead=true, include_tomorrow=true) | as_datetime %} 
+      <font color="greenyellow"><b><center>
+      Goedkoopste {{states('input_number.slider_cheapest_hours_block') | int}} uur: 
+      {{ days[time.weekday()] }} {{ cheapest_energy_hours("sensor.nordpool", hours=states('input_number.slider_cheapest_hours_block'), look_ahead=true, include_tomorrow=true, time_format="%H:%M:%S") }}
+      </center></b></font>

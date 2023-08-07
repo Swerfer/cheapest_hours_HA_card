@@ -6,6 +6,7 @@ This Home Assistant card shows the day and time of the cheapest hours in a dynam
 ## Prerequisites
 
 •	[Nordpool integration](https://github.com/custom-components/nordpool/)
+
 •	[Cheapest energy hours jinja macro](https://github.com/TheFes/cheapest-energy-hours)
 
 ## How to install

@@ -16,6 +16,8 @@ This Home Assistant card shows the day and time of the cheapest hours in a dynam
 
 •	Go to the dashboard of your choice, add a new manual card and past the YAML from card.yaml in the YAML editor.
 
+•	Change the Dutch texts in the language of your choice.
+
 •	Save the card and you’re done.
 
 ## Buy me a coffee
